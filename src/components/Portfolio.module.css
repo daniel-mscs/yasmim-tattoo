@@ -1,0 +1,35 @@
+.section {
+  background: var(--deep);
+  padding: 7rem 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.header .divider-line {
+  margin: 0 auto 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+}
+
+.vazio {
+  text-align: center;
+  color: var(--text-faint);
+  font-style: italic;
+  padding: 4rem 0;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+  .section { padding: 5rem 0; }
+}

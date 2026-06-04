@@ -1,0 +1,186 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.card:hover {
+  border-color: var(--red-dim);
+}
+
+.imgWrap {
+  position: relative;
+  aspect-ratio: 3/4;
+  background: var(--deep);
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.semFoto {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-faint);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.miniaturas {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 2px;
+  padding: 6px;
+  background: linear-gradient(to top, rgba(10,8,8,0.9), transparent);
+}
+
+.miniatura {
+  width: 36px;
+  height: 36px;
+  border: 1px solid transparent;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  padding: 0;
+  background: none;
+  flex-shrink: 0;
+}
+
+.miniatura img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.miniaturaAtiva {
+  border-color: var(--red);
+}
+
+.badges {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.badge {
+  background: rgba(10,8,8,0.8);
+  color: var(--text-faint);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.badgeCapa {
+  background: var(--red);
+  color: var(--black);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+}
+
+.acoes {
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.ordem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btnOrdem {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btnOrdem:hover:not(:disabled) {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.btnOrdem:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.posicao {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  min-width: 16px;
+  text-align: center;
+}
+
+.acoesDir {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.btnRemoverFoto {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-faint);
+  padding: 0.3rem 0.7rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnRemoverFoto:hover {
+  border-color: var(--red-dim);
+  color: var(--red-dim);
+}
+
+.btnDeletar {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-faint);
+  padding: 0.3rem 0.7rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnDeletar:hover {
+  border-color: var(--red);
+  color: var(--red);
+}

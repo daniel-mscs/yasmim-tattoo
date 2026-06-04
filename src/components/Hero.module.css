@@ -1,0 +1,151 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 60%, rgba(120,0,0,0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 80% 80% at 50% 100%, rgba(80,0,0,0.25) 0%, transparent 60%);
+}
+
+.ornament {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(700px, 90vw);
+  height: min(700px, 90vw);
+  border: 1px solid rgba(204,0,0,0.08);
+  border-radius: 50%;
+  animation: rotateSlow 60s linear infinite;
+  pointer-events: none;
+}
+
+.ornament::before {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  border: 1px solid rgba(204,0,0,0.05);
+  border-radius: 50%;
+}
+
+@keyframes rotateSlow {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.pre {
+  font-size: 0.75rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1.5rem;
+  position: relative;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.pre::before,
+.pre::after {
+  content: '—';
+  margin: 0 0.8em;
+  color: var(--red-dim);
+}
+
+.nome {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: clamp(5rem, 14vw, 11rem);
+  line-height: 0.9;
+  color: var(--text);
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  text-shadow:
+    0 0 80px rgba(204,0,0,0.3),
+    0 0 160px rgba(204,0,0,0.1);
+}
+
+.divider {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--red), transparent);
+  margin: 2rem auto;
+  position: relative;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.divider::before {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--red);
+  font-size: 0.6rem;
+  background: var(--black);
+  padding: 0 0.5em;
+}
+
+.sub {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-style: italic;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  max-width: 500px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.location {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-top: 0.8rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.btns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+@media (max-width: 600px) {
+  .pre {
+    max-width: 260px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .pre::before,
+  .pre::after { display: none; }
+
+  .btns { flex-direction: column; align-items: center; }
+}

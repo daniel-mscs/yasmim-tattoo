@@ -1,0 +1,85 @@
+.footer {
+  background: var(--deep);
+  border-top: 1px solid var(--border);
+  padding: 4rem 0 3rem;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.brand .logo {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 2rem;
+  color: var(--red);
+  display: block;
+  margin-bottom: 0.8rem;
+  text-decoration: none;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.col h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1.2rem;
+}
+
+.col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.col ul a,
+.col a,
+.col span {
+  font-size: 0.9rem;
+  color: var(--text-faint);
+  text-decoration: none;
+  display: block;
+  transition: color 0.3s;
+  margin-bottom: 0.4rem;
+}
+
+.col ul a:hover,
+.col a:hover { color: var(--text-dim); }
+
+.bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.bottom p {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  letter-spacing: 0.1em;
+}
+
+.bottom span { color: var(--red); }
+
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .inner { grid-template-columns: 1fr; gap: 2rem; }
+  .bottom { flex-direction: column; text-align: center; }
+}
